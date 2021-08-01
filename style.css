@@ -52,7 +52,10 @@ h1 {
   text-shadow: 1px 1px 1px #000000;
   margin: 2rem;
 }
-/* .container {
+input {
+  border: none;
+}
+.container {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
@@ -60,10 +63,7 @@ h1 {
   gap: 1.5rem;
 
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(240px, 1fr)
-  );
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   place-items: center;
 
   background: hsl(0, 0%, 17%, 0.6);
@@ -115,7 +115,7 @@ h1 {
 }
 .btn:hover::after {
   opacity: 1;
-} */
+}
 footer {
   padding: 2rem;
   color: snow;
