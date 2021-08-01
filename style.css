@@ -141,7 +141,7 @@ footer {
   align-items: center;
   justify-content: space-between;
 }
-footer a {
+footer .author a {
   color: var(--secondary);
 }
 
