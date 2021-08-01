@@ -26,16 +26,28 @@ html {
 body {
   position: relative;
 }
-header {
-  border-bottom: 2rem solid var(--primary);
-}
-header img,
-footer img {
+
+header,
+footer {
   display: block;
   margin: 0 auto;
+  width: 90%;
+  max-width: 700px;
+  height: auto;
+  min-height: 100px;
+
+  background-size: contain;
+  background-repeat: no-repeat;
 }
-footer img {
+header {
+  background-image: url('./assets/header.png');
+  background-position: center bottom;
+}
+footer {
+  background-image: url('./assets/footer.jpeg');
   margin-left: 0;
+  min-height: 200px;
+  background-position: left;
 }
 main {
   width: 100%;
@@ -51,13 +63,14 @@ main {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  border-top: 2rem solid var(--primary);
 }
 h1 {
-  font-size: 4.8rem;
+  font-size: 3.6rem;
   letter-spacing: 1px;
   color: snow;
   text-shadow: 1px 1px 1px #000000;
-  margin-bottom: 3rem;
+  margin: 2rem 0;
 }
 .container {
   width: 100%;
@@ -135,12 +148,4 @@ aside {
 }
 aside a {
   color: black;
-}
-
-@media screen and (max-width: 700px) {
-  header img,
-  footer img {
-    width: 100%;
-    height: auto;
-  }
 }
