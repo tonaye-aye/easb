@@ -21,34 +21,14 @@
 }
 html {
   font-size: 62.5%;
-  background: black;
 }
 body {
-  position: relative;
+  background: rgba(20, 20, 20, 0.9);
 }
-
-/* header,
-footer {
+header img {
   display: block;
   margin: 0 auto;
-  width: 90%;
-  max-width: 700px;
-  height: auto;
-  min-height: 100px;
-
-  background-size: contain;
-  background-repeat: no-repeat;
 }
-header {
-  background-image: url('./assets/header.png');
-  background-position: center bottom;
-}
-footer {
-  background-image: url('./assets/footer.jpeg');
-  margin-left: 0;
-  min-height: 200px;
-  background-position: left;
-} */
 main {
   width: 100%;
   min-height: 100vh;
@@ -58,15 +38,20 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /*
-  background-image: url('/assets/background.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat; */
+
+  background: black;
   border-top: 2rem solid var(--primary);
 }
 h1 {
   font-size: 3.6rem;
+  letter-spacing: 1px;
+  color: snow;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+h2 {
+  font-size: 3rem;
   letter-spacing: 1px;
   color: snow;
   text-shadow: 1px 1px 1px #000000;
@@ -86,7 +71,7 @@ h1 {
   ); /* or; auto-fit */
   place-items: center;
 
-  background: rgb(0, 0, 0);
+  background: hsl(0, 0%, 17%, 0.6);
   border-radius: var(--border-radius);
   box-shadow: var(--container-shadow);
 }
@@ -138,14 +123,21 @@ h1 {
   opacity: 1;
 }
 aside {
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
-
-  color: black;
-
+  padding: 2rem;
+  color: snow;
   font-size: 1.6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 aside a {
-  color: black;
+  color: var(--secondary);
+}
+
+@media screen and (max-width: 600px) {
+  header img {
+    width: 100%;
+    height: auto;
+  }
 }
