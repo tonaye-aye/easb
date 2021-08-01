@@ -8,7 +8,6 @@ const sounds = [...audio];
     button.addEventListener(evt, (e) => {
       const sound = sounds.find((item) => item.dataset.sound === e.target.id);
       let playing;
-      console.log(playing);
       sounds.forEach((item) => {
         if (!item.paused) return (playing = true);
       });
