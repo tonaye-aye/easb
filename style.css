@@ -21,7 +21,7 @@
 }
 html {
   font-size: 62.5%;
-  background: var(--secondary);
+  background: black;
 }
 body {
   position: relative;
