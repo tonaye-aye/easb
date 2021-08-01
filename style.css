@@ -60,6 +60,7 @@ input {
 
   color: snow;
   background: hsl(0, 0%, 17%, 0.6);
+  border-radius: var(--border-radius);
 
   font-size: 1.8rem;
   font-family: inherit;
