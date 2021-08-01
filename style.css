@@ -58,11 +58,11 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
+  /*
   background-image: url('/assets/background.jpg');
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   border-top: 2rem solid var(--primary);
 }
 h1 {
