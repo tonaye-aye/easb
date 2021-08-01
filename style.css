@@ -64,7 +64,7 @@ input {
   outline: none;
 
   color: snow;
-  background: hsl(0, 0%, 17%, 0.4);
+  background: hsl(0, 0%, 17%, 0.8);
   border-radius: var(--border-radius);
 
   font-size: 1.8rem;
