@@ -57,6 +57,7 @@ form {
   max-width: 900px;
   margin: 0 auto;
   background: #222222;
+  padding: 2rem;
 
   display: flex;
   align-items: center;
@@ -71,7 +72,6 @@ input::placeholder {
 input {
   width: 100%;
   border: none;
-  padding: 2rem;
   outline: none;
 
   color: snow;
