@@ -39,6 +39,8 @@ header img {
 }
 main {
   width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   min-height: 70vh;
   padding: 2rem;
 
@@ -97,7 +99,6 @@ input {
 }
 .container {
   width: 100%;
-  padding: 2rem;
   gap: 1.5rem;
 
   place-items: center;
