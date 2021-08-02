@@ -141,14 +141,12 @@ footer {
   align-items: center;
   justify-content: space-between;
 }
-footer .author a {
-  color: var(--secondary);
-}
 a,
 a:hover,
 a:focus,
 a:active {
   text-decoration: none;
+  color: var(--secondary);
 }
 
 @media screen and (max-width: 600px) {
