@@ -23,7 +23,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  background: rgba(20, 20, 20, 0.9);
+  background: black;
 }
 header {
   background: var(--secondary);
@@ -34,28 +34,34 @@ header img {
 }
 main {
   width: 100%;
-  min-height: 75vh;
-  padding: 3rem 2rem;
+  min-height: 70vh;
+  padding: 2rem;
 
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  flex-direction: column;
+  display: grid;
+  place-items: center;
 
   background: black;
-  border-top: 2rem solid var(--primary);
+  border-top: 1.5rem solid var(--primary);
 }
-h1 {
-  font-size: 2.8rem;
-  letter-spacing: 1px;
-  color: snow;
-  margin: 1rem;
+.search-bar {
+  width: 100%;
+  background: #222222;
+  padding: 1rem 0;
 }
 form {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 0 1.75rem 0;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  color: grey;
+}
+input::placeholder {
+  color: grey;
 }
 input {
   width: 100%;
@@ -64,27 +70,31 @@ input {
   outline: none;
 
   color: snow;
-  background: hsl(0, 0%, 17%, 0.8);
-  border-radius: var(--border-radius);
+  background: inherit;
 
-  font-size: 1.8rem;
+  font-size: inherit;
   font-family: inherit;
-  letter-spacing: 1px;
+  letter-spacing: inherit;
+}
+.clear {
+  visibility: hidden;
+  pointer-events: none;
 }
 .container {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  padding: 1.75rem;
   gap: 1.5rem;
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* auto-fit */
   place-items: center;
-
-  background: hsl(0, 0%, 17%, 0.6);
-  border-radius: var(--border-radius);
-  box-shadow: var(--container-shadow);
+}
+.message {
+  padding: 2rem;
+  place-self: start;
+  color: snow;
+  font-size: 1.6rem;
 }
 .card {
   width: 100%;
