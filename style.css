@@ -61,7 +61,7 @@ form {
   color: grey;
 }
 input::placeholder {
-  color: rgb(80, 80, 80);
+  color: grey;
 }
 input {
   width: 100%;
@@ -86,13 +86,12 @@ input {
 }
 .container {
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
+  padding: 2rem;
   gap: 1.5rem;
 
+  place-items: center;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* auto-fit */
-  place-items: center;
 }
 .message {
   padding: 2rem;
