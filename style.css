@@ -17,7 +17,8 @@
   margin: 0;
   padding: 0;
   font-family: Helvetica, sans-serif;
-
+}
+.no-select {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -64,7 +65,7 @@ form {
   max-width: 900px;
   margin: 0 auto;
   background: #222222;
-  padding: 2rem;
+  padding: 1rem 2rem;
 
   display: flex;
   align-items: center;
