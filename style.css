@@ -61,7 +61,7 @@ form {
   color: grey;
 }
 input::placeholder {
-  color: grey;
+  color: rgb(80, 80, 80);
 }
 input {
   width: 100%;
@@ -79,6 +79,10 @@ input {
 .clear {
   visibility: hidden;
   pointer-events: none;
+}
+.close {
+  pointer-events: auto;
+  cursor: pointer;
 }
 .container {
   width: 100%;
