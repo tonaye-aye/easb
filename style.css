@@ -143,6 +143,11 @@ footer {
 }
 footer .author a {
   color: var(--secondary);
+}
+a,
+a:hover,
+a:focus,
+a:active {
   text-decoration: none;
 }
 
