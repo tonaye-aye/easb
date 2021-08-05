@@ -32,10 +32,28 @@ body {
 }
 header {
   background: var(--secondary);
+  position: relative;
 }
 header img {
   display: block;
   margin: 0 auto;
+}
+header .install {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 1rem 1.5rem;
+
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-hover);
+  cursor: pointer;
+
+  font-size: 1.5rem;
+  /* font-weight: bold; */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: snow;
+  background: var(--primary);
 }
 main {
   width: 100%;
