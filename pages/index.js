@@ -13,7 +13,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          <span className="text-purple-500">PWA</span> made with <a href="https://nextjs.org">Next.js</a> and <span className="text-pink-600">Tailwind CSS</span>.
         </h1>
 
         <p className={styles.description}>
