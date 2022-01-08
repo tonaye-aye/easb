@@ -4,10 +4,10 @@ module.exports = withPWA({
   pwa: {
     dest: 'public',
     register: true,
-    skipWaiting: true
+    skipWaiting: true,
 
     // disdable PWA in dev envronment
-    //disable: process.env.NODE_ENV === 'development'
+    disable: process.env.NODE_ENV === 'development'
   },
   webpack(config, options) {
     config.module.rules.push({

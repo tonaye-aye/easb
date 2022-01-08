@@ -1,20 +1,15 @@
-import { useRef } from 'react';
+import { useState, useRef } from 'react';
 import { sounds } from '@data/data';
 
-import yeah from '../public/sounds/yeah.mp3';
-
 export default function Footer() {
-  const soundRefs = [];
-  const audio = useRef(null);
+  const [playing, setPlaying] = useState(false);
+  const audio = useRef([]);
 
-  sounds.forEach((sound) => {
-    soundRefs.push(sound);
-  });
-
-  const handleSound = (src) => {
-    console.log(soundRefs);
-
-    //soundRefs[src].current[src].play();
+  const handleSound = (id) => {
+    // for (const item in audio) {
+    //   console.log(audio[item]);
+    // }
+    audio.current[id].play();
   };
 
   return (
@@ -29,14 +24,10 @@ export default function Footer() {
         <div className="container">
           {sounds.map(({ id, title, src }) => (
             <div key={id} className="card">
-              <div
-                id={id}
-                className="btn no-select"
-                onClick={() => handleSound(src)}
-              >
+              <div className="btn no-select" onClick={() => handleSound(id)}>
                 {title}
               </div>
-              <audio ref={soundRefs[id]} src={src}>
+              <audio id={id} ref={(el) => audio.current.push(el)} src={src}>
                 Your browser does not support the
                 <code>audio</code> element.
               </audio>
@@ -47,13 +38,3 @@ export default function Footer() {
     </>
   );
 }
-
-// <div className="card">
-//             <div className="btn no-select" onClick={handleSound}>
-//               SOmething
-//             </div>
-//             <audio ref={audio} src={yeah}>
-//               Your browser does not support the
-//               <code>audio</code> element.
-//             </audio>
-//           </div>
