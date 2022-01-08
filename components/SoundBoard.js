@@ -30,7 +30,8 @@ export default function Footer() {
   };
 
   const searchItems = (value) => {
-    setSearchInput(value);
+    let newValue = value.replace(/\\/, '');
+    setSearchInput(newValue);
   };
 
   return (
