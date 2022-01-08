@@ -30,7 +30,13 @@ export default function Footer() {
   };
 
   const searchItems = (value) => {
-    let newValue = value.replace(/\\/, '');
+    let newValue = value
+      .replace(/\\+/, '')
+      .replace(/\/+/, '')
+      .replace(/\[+/, '')
+      .replace(/\]+/, '');
+
+    //console.log(newValue);
     setSearchInput(newValue);
   };
 
