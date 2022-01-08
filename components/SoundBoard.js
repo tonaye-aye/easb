@@ -1,9 +1,24 @@
 import { useState, useRef, useEffect } from 'react';
-import { sounds } from '@data/data';
+import sounds from '@data/sounds';
 
 export default function Footer() {
   const [playing, setPlaying] = useState(false);
   const soundRefs = useRef([]);
+
+  const [searchInput, setSearchInput] = useState('');
+  const [filteredSounds, setFilteredSounds] = useState([]);
+
+  useEffect(() => {
+    if (searchInput !== '') {
+      const filtered = sounds.filter((item) => {
+        const regex = new RegExp(searchInput, 'gi');
+        return item.title.match(regex);
+      });
+      setFilteredSounds(filtered);
+    } else {
+      setFilteredSounds(sounds);
+    }
+  }, [searchInput]);
 
   const handleSound = (id) => {
     if (playing) return;
@@ -14,17 +29,26 @@ export default function Footer() {
     });
   };
 
+  const searchItems = (value) => {
+    setSearchInput(value);
+  };
+
   return (
     <>
       <div className="search-bar">
         <form>
-          <input type="text" placeholder="search..." autoFocus />
+          <input
+            onChange={(e) => searchItems(e.target.value)}
+            type="text"
+            placeholder="search..."
+            autoFocus
+          />
           <div className="clear no-select">&#10005;</div>
         </form>
       </div>
       <main>
         <div className="container">
-          {sounds.map(({ id, title, src }) => (
+          {filteredSounds.map(({ id, title, src }) => (
             <div key={id} className="card">
               <div className="btn no-select" onClick={() => handleSound(id)}>
                 {title}

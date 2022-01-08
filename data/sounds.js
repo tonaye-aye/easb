@@ -20,7 +20,7 @@ import wallStreet from '../public/sounds/wall-street.mp3';
 import watchingBirdUp from '../public/sounds/watching-bird-up.mp3';
 import yeah from '../public/sounds/yeah.mp3';
 
-export const sounds = [
+const sounds = [
   {
     id: 0,
     code: 'beRightBack',
@@ -149,6 +149,4 @@ export const sounds = [
   }
 ];
 
-export const details = {
-  name: 'The Eric Andre Show Soundboard'
-};
+export default sounds;
