@@ -1,12 +1,21 @@
 import { useState, useRef, useEffect } from 'react';
 import sounds from '@data/sounds';
 
-export default function Footer() {
-  const [playing, setPlaying] = useState(false);
-  const soundRefs = useRef([]);
+import Input from '@components/input';
 
+export default function SoundBoard() {
+  const soundRefs = useRef([]);
+  const inputRef = useRef(null);
+
+  const [playing, setPlaying] = useState(false);
   const [searchInput, setSearchInput] = useState('');
   const [filteredSounds, setFilteredSounds] = useState([]);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
 
   useEffect(() => {
     if (searchInput !== '') {
@@ -29,30 +38,9 @@ export default function Footer() {
     });
   };
 
-  const searchItems = (value) => {
-    let newValue = value
-      .replace(/\\+/, '')
-      .replace(/\/+/, '')
-      .replace(/\[+/, '')
-      .replace(/\]+/, '');
-
-    //console.log(newValue);
-    setSearchInput(newValue);
-  };
-
   return (
     <>
-      <div className="search-bar">
-        <form>
-          <input
-            onChange={(e) => searchItems(e.target.value)}
-            type="text"
-            placeholder="search..."
-            autoFocus
-          />
-          <div className="clear no-select">&#10005;</div>
-        </form>
-      </div>
+      <Input setSearchInput={setSearchInput} />
       <main>
         <div className="container">
           {filteredSounds.map(({ id, title, src }) => (
