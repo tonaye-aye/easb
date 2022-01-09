@@ -9,22 +9,35 @@ export default function Input({ setSearchInput }) {
     if (inputRef.current) {
       inputRef.current.focus();
     }
+  }, []);
 
+  useEffect(() => {
     const handleKeyDown = (e) => {
       if (document.activeElement === inputRef.current) return;
-      setPlaceholder("'/' to focus");
       if (e.key === '/') {
         inputRef.current.focus();
         setInput('');
+        setPlaceholder('Search...');
+      }
+    };
+
+    const handleClickOutside = (e) => {
+      if (inputRef.current && !inputRef.current.contains(e.target)) {
+        inputRef.current.blur();
+        setPlaceholder("Press '/' to focus...");
+      } else {
+        setPlaceholder('Search...');
       }
     };
 
     document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('click', (e) => handleClickOutside(e));
 
     return function cleanup() {
       document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('click', (e) => handleClickOutside(e));
     };
-  }, []);
+  });
 
   const cleanSearch = (value) => {
     let newValue = value
