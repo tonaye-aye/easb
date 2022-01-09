@@ -50,22 +50,6 @@ header {
   display: flex;
   justify-content: center;
 }
-header .install {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  padding: 1rem 1.5rem;
-
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow-hover);
-  cursor: pointer;
-
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: snow;
-  background: #1a1a1a;
-}
 main {
   width: 100%;
   max-width: 900px;

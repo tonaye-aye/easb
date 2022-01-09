@@ -40,7 +40,11 @@ export default function SoundBoard() {
 
   return (
     <>
-      <Input setSearchInput={setSearchInput} />
+      <Input
+        setSearchInput={setSearchInput}
+        setFilteredSounds={setFilteredSounds}
+        sounds={sounds}
+      />
       <main>
         <div className="container">
           {filteredSounds.map(({ id, title, src }) => (

@@ -10,7 +10,6 @@ export default function Header() {
         height={200}
         alt="The Eric Andre Show"
       />
-      <div className="install">Download app &#9996;</div>
     </header>
   );
 }

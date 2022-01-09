@@ -1,7 +1,8 @@
 import { useRef, useEffect, useState } from 'react';
 
-export default function Input({ setSearchInput }) {
+export default function Input({ setSearchInput, setFilteredSounds, sounds }) {
   const inputRef = useRef(null);
+  const clearRef = useRef(null);
   const [input, setInput] = useState('');
   const [placeholder, setPlaceholder] = useState('Search...');
 
@@ -22,7 +23,11 @@ export default function Input({ setSearchInput }) {
     };
 
     const handleClickOutside = (e) => {
-      if (inputRef.current && !inputRef.current.contains(e.target)) {
+      if (
+        inputRef.current &&
+        !inputRef.current.contains(e.target) &&
+        !clearRef.current.contains(e.target)
+      ) {
         inputRef.current.blur();
         setPlaceholder("Press '/' to focus...");
       } else {
@@ -39,7 +44,17 @@ export default function Input({ setSearchInput }) {
     };
   });
 
-  const cleanSearch = (value) => {
+  useEffect(() => {
+    if (input !== '') {
+      clearRef.current.style.visibility = `visible`;
+      clearRef.current.classList.add('close');
+    } else {
+      clearRef.current.style.visibility = `hidden`;
+      clearRef.current.classList.remove('close');
+    }
+  }, [input]);
+
+  const handleSearch = (value) => {
     let newValue = value
       .replace(/\\+/, '')
       .replace(/\/+/, '')
@@ -49,17 +64,25 @@ export default function Input({ setSearchInput }) {
     setSearchInput(newValue);
   };
 
+  const handleClear = () => {
+    inputRef.current.focus();
+    setInput('');
+    setFilteredSounds(sounds);
+  };
+
   return (
     <div className="search-bar">
       <form>
         <input
           value={input}
           ref={inputRef}
-          onChange={(e) => cleanSearch(e.target.value)}
+          onChange={(e) => handleSearch(e.target.value)}
           type="text"
           placeholder={placeholder}
         />
-        <div className="clear no-select">&#10005;</div>
+        <div ref={clearRef} onClick={handleClear} className="clear no-select">
+          &#10005;
+        </div>
       </form>
     </div>
   );
