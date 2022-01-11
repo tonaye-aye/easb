@@ -3,11 +3,11 @@ import headerImg from '../public/assets/header.png';
 
 export default function Header() {
   return (
-    <header>
+    <header className="bg-yellow-400 relative flex justify-center">
       <Image
         src={headerImg}
-        width={600}
-        height={200}
+        width={300}
+        height={100}
         alt="The Eric Andre Show"
       />
     </header>

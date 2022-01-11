@@ -44,12 +44,6 @@ html {
 body {
   background: black;
 }
-header {
-  background: var(--secondary);
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
 main {
   width: 100%;
   max-width: 900px;
