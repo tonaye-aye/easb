@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import sounds from '@data/sounds';
+import { sounds } from '@data/appData';
 
 import Input from '@components/input';
 
