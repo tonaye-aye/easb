@@ -48,11 +48,9 @@ export default function Input({ setSearchInput, setFilteredSounds, sounds }) {
     if (input !== '') {
       clearRef.current.style.visibility = 'visible';
       clearRef.current.style.pointerEvents = 'auto';
-      clearRef.current.style.cursor = 'pointer';
     } else {
       clearRef.current.style.visibility = 'hidden';
       clearRef.current.style.pointerEvents = 'none';
-      clearRef.current.style.cursor = 'default';
     }
   }, [input]);
 
@@ -74,19 +72,19 @@ export default function Input({ setSearchInput, setFilteredSounds, sounds }) {
 
   return (
     <div className="w-full sticky top-0 z-10 bg-black border-b-2 border-yellow-400">
-      <form className="w-full flex items-center justify-between mx-auto md:max-w-5xl p-2 text-white">
+      <form className="w-full flex relative items-center justify-between mx-auto md:max-w-5xl px-2 py-3 text-white">
         <input
           value={input}
           ref={inputRef}
           onChange={(e) => handleSearch(e.target.value)}
           type="text"
           placeholder={placeholder}
-          className="grow px-2 py-3 border-0 outline-0 text-white bg-inherit"
+          className="w-full p-3 border-0 outline-0 text-white bg-inherit rounded-md bg-gray-900"
         />
         <div
           ref={clearRef}
           onClick={handleClear}
-          className="py-1.5 px-3 no-select rounded-full bg-gray-800 hover:bg-red-700"
+          className="absolute py-1 px-2 right-4 no-select rounded-full bg-gray-800 hover:bg-red-700 text-sm hover:cursor-pointer"
         >
           &#10005;
         </div>

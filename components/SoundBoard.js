@@ -49,7 +49,7 @@ export default function SoundBoard() {
       />
       <main className="w-full mx-auto px-2 py-6 md:max-w-5xl grid place-items-center gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         {filteredSounds.map(({ id, title, src }) => (
-          <div key={id} className="card">
+          <div key={id} className="w-full shawod-lg">
             <button
               className="w-full no-select rounded-md text-lg text-white px-3 py-6 text-center bg-pink-700 transition ease-in-out duration-300 hover:scale-105"
               ref={(el) => buttonRefs.current.push(el)}
