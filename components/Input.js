@@ -1,6 +1,11 @@
 import { useRef, useEffect, useState } from 'react';
 
-export default function Input({ setSearchInput, setFilteredSounds, sounds }) {
+export default function Input({
+  setSearchInput,
+  setFilteredSounds,
+  sounds,
+  disabledInput
+}) {
   const inputRef = useRef(null);
   const clearRef = useRef(null);
   const [input, setInput] = useState('');
@@ -71,20 +76,21 @@ export default function Input({ setSearchInput, setFilteredSounds, sounds }) {
   };
 
   return (
-    <div className="w-full sticky top-0 z-10 bg-black border-b-2 border-yellow-400">
-      <form className="w-full flex relative items-center justify-between mx-auto md:max-w-5xl px-2 py-3 text-white">
+    <div className="w-full sticky top-0 z-10 bg-stone-900 border-b-2 border-yellow-400">
+      <form className="w-full flex relative items-center justify-between mx-auto md:max-w-5xl px-6 md:px-2 py-3 text-white">
         <input
           value={input}
           ref={inputRef}
+          disabled={disabledInput}
           onChange={(e) => handleSearch(e.target.value)}
           type="text"
           placeholder={placeholder}
-          className="w-full p-3 border-0 outline-0 text-white bg-inherit rounded-md bg-gray-900"
+          className="w-full p-3 border-0 outline-0 text-white bg-inherit rounded-md bg-stone-800"
         />
         <div
           ref={clearRef}
           onClick={handleClear}
-          className="absolute py-1 px-2 right-4 no-select rounded-full bg-gray-800 hover:bg-red-700 text-sm hover:cursor-pointer"
+          className="absolute py-1 px-2 right-8 md:right-4 no-select rounded-full bg-stone-900 hover:bg-red-700 text-sm hover:cursor-pointer"
         >
           &#10005;
         </div>

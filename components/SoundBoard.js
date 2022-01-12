@@ -10,6 +10,7 @@ export default function SoundBoard() {
 
   const [playing, setPlaying] = useState(false);
   const [searchInput, setSearchInput] = useState('');
+  const [disabledInput, setDisabledInput] = useState(false);
   const [filteredSounds, setFilteredSounds] = useState([]);
 
   useEffect(() => {
@@ -34,9 +35,11 @@ export default function SoundBoard() {
     e.preventDefault();
     if (playing) return;
     soundRefs.current[id].play();
+    setDisabledInput(true);
     setPlaying(true);
     soundRefs.current[id].addEventListener('ended', () => {
       setPlaying(false);
+      setDisabledInput(false);
     });
   };
 
@@ -46,12 +49,13 @@ export default function SoundBoard() {
         setSearchInput={setSearchInput}
         setFilteredSounds={setFilteredSounds}
         sounds={sounds}
+        disabledInput={disabledInput}
       />
-      <main className="w-full mx-auto px-2 py-6 md:max-w-5xl grid place-items-center gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+      <main className="w-full mx-auto px-6 md:px-2 py-6 mb-[150px] md:max-w-5xl grid place-items-center items-start gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         {filteredSounds.map(({ id, title, src }) => (
           <div key={id} className="w-full shawod-lg">
             <button
-              className="w-full no-select rounded-md text-lg text-white px-3 py-6 text-center bg-pink-700 transition ease-in-out duration-300 hover:scale-105"
+              className="w-full no-select rounded-md text-lg text-white px-2 py-4 text-center bg-pink-700 transition ease-in-out duration-300 hover:scale-105"
               ref={(el) => buttonRefs.current.push(el)}
               onClick={(e) => handleSound(e, id)}
               type="button"
