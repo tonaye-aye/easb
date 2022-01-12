@@ -25,21 +25,6 @@ body {
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
-.message {
-  padding: 2rem;
-  place-self: start;
-  color: snow;
-  font-size: 1.6rem;
-}
-footer {
-  padding: 2rem;
-  color: snow;
-  font-size: 1.6rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 a,
 a:hover,
 a:focus,

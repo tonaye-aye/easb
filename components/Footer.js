@@ -4,8 +4,8 @@ import eric from '../public/assets/eric-icon.png';
 
 export default function Footer() {
   return (
-    <footer>
-      <div className="icons">
+    <footer className="flex justify-between p-3 text-white">
+      <div className="flex gap-2">
         <a
           rel="noreferrer"
           href="https://www.instagram.com/hannibalburess/?hl=en"
@@ -21,9 +21,16 @@ export default function Footer() {
           <Image src={eric} width={30} height={30} alt="eric andre" />
         </a>
       </div>
-      <div className="author">
-        made by <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">tones</a>
-      </div>
+      <span>
+        made by{' '}
+        <a
+          className="hover:text-yellow-400"
+          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          rel="noreferrer"
+        >
+          tones
+        </a>
+      </span>
     </footer>
   );
 }
