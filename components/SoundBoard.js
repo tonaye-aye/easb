@@ -51,27 +51,29 @@ export default function SoundBoard() {
         sounds={sounds}
         disabledInput={disabledInput}
       />
-      <main className="w-full mx-auto px-6 md:px-2 py-6 mb-[150px] md:max-w-5xl grid place-items-center items-start gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-        {filteredSounds.map(({ id, title, src }) => (
-          <div key={id} className="w-full shawod-lg">
-            <button
-              className="w-full no-select rounded-md text-lg text-white px-2 py-4 text-center bg-pink-700 transition ease-in-out duration-300 hover:scale-105"
-              ref={(el) => buttonRefs.current.push(el)}
-              onClick={(e) => handleSound(e, id)}
-              type="button"
-            >
-              {title}
-            </button>
-            <audio id={id} ref={(el) => soundRefs.current.push(el)} src={src}>
-              Your browser does not support the
-              <code>audio</code> element.
-            </audio>
-          </div>
-        ))}
-        {filteredSounds.length === 0 && (
-          <div className="message">No results found.</div>
-        )}
-      </main>
+      <div className="w-full h-[90%]">
+        <main className="w-full mx-auto px-6 md:px-2 py-6 mb-[90px] md:max-w-5xl grid place-items-center items-start gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+          {filteredSounds.map(({ id, title, src }) => (
+            <div key={id} className="w-full shawod-lg">
+              <button
+                className="w-full no-select rounded-md text-lg text-white px-2 py-4 text-center bg-pink-700 transition ease-in-out duration-300 hover:scale-105"
+                ref={(el) => buttonRefs.current.push(el)}
+                onClick={(e) => handleSound(e, id)}
+                type="button"
+              >
+                {title}
+              </button>
+              <audio id={id} ref={(el) => soundRefs.current.push(el)} src={src}>
+                Your browser does not support the
+                <code>audio</code> element.
+              </audio>
+            </div>
+          ))}
+          {filteredSounds.length === 0 && (
+            <div className="message">No results found.</div>
+          )}
+        </main>
+      </div>
     </>
   );
 }
