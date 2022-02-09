@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 
-// import { sounds } from '@data/appData'
-const { sounds } = dynamic(() => import('@data/appData'))
+import { sounds } from '@data/appData'
+// const { sounds } = dynamic(() => import('@data/appData'))
 
 import Input from '@components/Input'
 
