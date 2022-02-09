@@ -1,24 +1,24 @@
-import beRightBack from '../public/sounds/be-right-back.mp3';
-import birdUp from '../public/sounds/bird-up.mp3';
-import clapping from '../public/sounds/clapping.mp3';
-import creepyTune from '../public/sounds/creepy-tune.mp3';
-import eatTheLettuce from '../public/sounds/eat-the-lettuce.mp3';
-import firedHired from '../public/sounds/fired-hired.mp3';
-import hannibalsHands from '../public/sounds/hannibals-hands.mp3';
-import imFromGoogle from '../public/sounds/im-from-google.mp3';
-import kraftPunk from '../public/sounds/kraft-punk.mp3';
-import mySuit from '../public/sounds/my-suit.mp3';
-import officerEric from '../public/sounds/officer-eric.mp3';
-import onTheStreet from '../public/sounds/on-the-street.mp3';
-import pizzaBall from '../public/sounds/pizza-ball.mp3';
-import pretzelsTheSame from '../public/sounds/pretzels-the-same.mp3';
-import ranchItUp from '../public/sounds/ranch-it-up.mp3';
-import supDad from '../public/sounds/sup-dad.mp3';
-import supMello from '../public/sounds/sup-mello.mp3';
-import trustLikeThat from '../public/sounds/trust-like-that.mp3';
-import wallStreet from '../public/sounds/wall-street.mp3';
-import watchingBirdUp from '../public/sounds/watching-bird-up.mp3';
-import yeah from '../public/sounds/yeah.mp3';
+import beRightBack from '../public/sounds/be-right-back.mp3'
+import birdUp from '../public/sounds/bird-up.mp3'
+import clapping from '../public/sounds/clapping.mp3'
+import creepyTune from '../public/sounds/creepy-tune.mp3'
+import eatTheLettuce from '../public/sounds/eat-the-lettuce.mp3'
+import firedHired from '../public/sounds/fired-hired.mp3'
+import hannibalsHands from '../public/sounds/hannibals-hands.mp3'
+import imFromGoogle from '../public/sounds/im-from-google.mp3'
+import kraftPunk from '../public/sounds/kraft-punk.mp3'
+import mySuit from '../public/sounds/my-suit.mp3'
+import officerEric from '../public/sounds/officer-eric.mp3'
+import onTheStreet from '../public/sounds/on-the-street.mp3'
+import pizzaBall from '../public/sounds/pizza-ball.mp3'
+import pretzelsTheSame from '../public/sounds/pretzels-the-same.mp3'
+import ranchItUp from '../public/sounds/ranch-it-up.mp3'
+import supDad from '../public/sounds/sup-dad.mp3'
+import supMello from '../public/sounds/sup-mello.mp3'
+import trustLikeThat from '../public/sounds/trust-like-that.mp3'
+import wallStreet from '../public/sounds/wall-street.mp3'
+import watchingBirdUp from '../public/sounds/watching-bird-up.mp3'
+import yeah from '../public/sounds/yeah.mp3'
 
 export const sounds = [
   {
@@ -147,8 +147,8 @@ export const sounds = [
     title: 'YEAH',
     src: yeah
   }
-];
+]
 
 export const meta = {
-  title: 'The Eric Andre Show - Soundboard'
-};
+  title: 'EASB - Soundboard'
+}
