@@ -1,47 +1,47 @@
-import { useState, useRef, useEffect } from 'react';
-import { sounds } from '@data/appData';
+import { useState, useRef, useEffect } from 'react'
+import { sounds } from '@data/appData'
 
-import Input from '@components/input';
+import Input from '@components/input'
 
 export default function SoundBoard() {
-  const soundRefs = useRef([]);
-  const buttonRefs = useRef([]);
-  const inputRef = useRef(null);
+  const soundRefs = useRef([])
+  const buttonRefs = useRef([])
+  const inputRef = useRef(null)
 
-  const [playing, setPlaying] = useState(false);
-  const [searchInput, setSearchInput] = useState('');
-  const [disabledInput, setDisabledInput] = useState(false);
-  const [filteredSounds, setFilteredSounds] = useState([]);
+  const [playing, setPlaying] = useState(false)
+  const [searchInput, setSearchInput] = useState('')
+  const [disabledInput, setDisabledInput] = useState(false)
+  const [filteredSounds, setFilteredSounds] = useState([])
 
   useEffect(() => {
     if (inputRef.current) {
-      inputRef.current.focus();
+      inputRef.current.focus()
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
     if (searchInput !== '') {
       const filtered = sounds.filter((item) => {
-        const regex = new RegExp(searchInput, 'gi');
-        return item.title.match(regex);
-      });
-      setFilteredSounds(filtered);
+        const regex = new RegExp(searchInput, 'gi')
+        return item.title.match(regex)
+      })
+      setFilteredSounds(filtered)
     } else {
-      setFilteredSounds(sounds);
+      setFilteredSounds(sounds)
     }
-  }, [searchInput]);
+  }, [searchInput])
 
   const handleSound = (e, id) => {
-    e.preventDefault();
-    if (playing) return;
-    soundRefs.current[id].play();
-    setDisabledInput(true);
-    setPlaying(true);
+    e.preventDefault()
+    if (playing) return
+    soundRefs.current[id].play()
+    setDisabledInput(true)
+    setPlaying(true)
     soundRefs.current[id].addEventListener('ended', () => {
-      setPlaying(false);
-      setDisabledInput(false);
-    });
-  };
+      setPlaying(false)
+      setDisabledInput(false)
+    })
+  }
 
   return (
     <>
@@ -51,8 +51,8 @@ export default function SoundBoard() {
         sounds={sounds}
         disabledInput={disabledInput}
       />
-      <div className="w-full h-[90%]">
-        <main className="w-full mx-auto px-6 md:px-2 py-6 mb-[90px] md:max-w-5xl grid place-items-center items-start gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+      <div className="w-full">
+        <main className="w-full mx-auto px-6 md:px-2 py-6 md:mb-8 md:max-w-5xl grid place-items-center items-start gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {filteredSounds.map(({ id, title, src }) => (
             <div key={id} className="w-full shawod-lg">
               <button
@@ -70,10 +70,12 @@ export default function SoundBoard() {
             </div>
           ))}
           {filteredSounds.length === 0 && (
-            <div className="message">No results found.</div>
+            <div className="text-pink-500 font-semibold text-2xl py-12 flex justify-center">
+              No results found. 😦
+            </div>
           )}
         </main>
       </div>
     </>
-  );
+  )
 }

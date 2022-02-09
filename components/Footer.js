@@ -1,10 +1,10 @@
-import Image from 'next/image';
-import hannibal from '../public/assets/hannibal-icon.png';
-import eric from '../public/assets/eric-icon.png';
+import Image from 'next/image'
+import hannibal from '../public/assets/hannibal-icon.png'
+import eric from '../public/assets/eric-icon.png'
 
 export default function Footer() {
   return (
-    <footer className="flex justify-between p-3 text-white">
+    <footer className="flex justify-between p-3 text-white backdrop-blur">
       <div className="flex gap-2">
         <a
           rel="noreferrer"
@@ -32,5 +32,5 @@ export default function Footer() {
         </a>
       </span>
     </footer>
-  );
+  )
 }
