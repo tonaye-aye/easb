@@ -34,9 +34,9 @@ export default function Input({
         !clearRef.current.contains(e.target)
       ) {
         inputRef.current.blur()
-        setPlaceholder('Search here...')
+        setPlaceholder("Press '/' to focus...")
       } else {
-        setPlaceholder('Here we go!')
+        setPlaceholder('Search...')
       }
     }
 
