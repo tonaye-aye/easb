@@ -21,7 +21,7 @@ import watchingBirdUp from '../public/sounds/watching-bird-up.mp3'
 import yeah from '../public/sounds/yeah.mp3'
 
 export const meta = {
-  title: 'EASB - Soundboard'
+  title: 'The Eric Andre Show! - Soundboard'
 }
 
 export const sounds = [
