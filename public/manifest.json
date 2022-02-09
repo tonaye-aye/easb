@@ -4,8 +4,8 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "Eric Andre Soundboard",
-    "short_name": "Eric Andre",
+    "name": "The Eric Andre Soundboard",
+    "short_name": "EASB",
     "description": "The sounds of The Eric Andre Show",
     "icons": [
         {

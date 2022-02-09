@@ -20,6 +20,10 @@ import wallStreet from '../public/sounds/wall-street.mp3'
 import watchingBirdUp from '../public/sounds/watching-bird-up.mp3'
 import yeah from '../public/sounds/yeah.mp3'
 
+export const meta = {
+  title: 'EASB - Soundboard'
+}
+
 export const sounds = [
   {
     id: 0,
@@ -148,7 +152,3 @@ export const sounds = [
     src: yeah
   }
 ]
-
-export const meta = {
-  title: 'EASB - Soundboard'
-}

@@ -5,7 +5,6 @@ import { meta } from '@data/appData'
 
 import Header from '@components/Header'
 import Footer from '@components/Footer'
-// import SoundBoard from '@components/SoundBoard'
 const SoundBoard = dynamic(() => import('@components/SoundBoard'))
 
 export default function Home() {
