@@ -25,10 +25,10 @@ export default function Footer() {
         made by{' '}
         <a
           className="hover:text-yellow-400"
-          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          href="https://www.youtube.com/watch?v=r9B7BQWnZJs"
           rel="noreferrer"
         >
-          tones
+          L. Ron Hoyabemebe
         </a>
       </span>
     </footer>
